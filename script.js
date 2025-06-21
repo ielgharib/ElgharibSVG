@@ -1,46 +1,26 @@
-let font = null;
+document.getElementById("renderBtn").addEventListener("click", () => {
+  const fileInput = document.getElementById("fontFile");
+  const textInput = document.getElementById("textInput").value;
+  const preview = document.getElementById("preview");
 
-document.getElementById('fontFile').addEventListener('change', function (event) {
-  const file = event.target.files[0];
-
-  if (file) {
-    const reader = new FileReader();
-
-    reader.onload = function (e) {
-      const arrayBuffer = e.target.result;
-
-      font = opentype.parse(arrayBuffer);
-      alert('✅ تم تحميل الخط بنجاح!');
-    };
-
-    reader.readAsArrayBuffer(file);
-  }
-});
-
-document.getElementById('previewBtn').addEventListener('click', function () {
-  const text = document.getElementById('inputText').value;
-  const canvas = document.getElementById('previewCanvas');
-  const ctx = canvas.getContext('2d');
-
-  if (!font) {
-    alert('⚠️ من فضلك، ارفع ملف الخط أولاً!');
+  if (fileInput.files.length === 0) {
+    alert("من فضلك اختر ملف خط أولاً");
     return;
   }
 
-  ctx.clearRect(0, 0, canvas.width, canvas.height); // مسح المعاينة السابقة
+  const reader = new FileReader();
 
-  const fontSize = 48;
-  const path = font.getPath(text, 50, 100, fontSize);
+  reader.onload = function (e) {
+    const fontData = e.target.result;
+    const fontName = "UploadedFont";
 
-  path.draw(ctx);
-});
+    const font = new FontFace(fontName, fontData);
+    font.load().then((loadedFont) => {
+      document.fonts.add(loadedFont);
+      preview.style.fontFamily = fontName;
+      preview.textContent = textInput;
+    });
+  };
 
-document.getElementById('downloadBtn').addEventListener('click', function () {
-  const canvas = document.getElementById('previewCanvas');
-  const image = canvas.toDataURL('image/png');
-
-  const link = document.createElement('a');
-  link.href = image;
-  link.download = 'preview.png';
-  link.click();
+  reader.readAsArrayBuffer(fileInput.files[0]);
 });
