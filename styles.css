@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Cairo', sans-serif;
+  direction: rtl;
+  background-color: #f9f9f9;
+  color: #222;
+  padding: 20px;
+  margin: 0;
+  text-align: center;
+}
+
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #1a237e;
+}
+
+input[type="file"],
+textarea,
+button {
+  font-family: inherit;
+  font-size: 16px;
+  padding: 10px;
+  margin: 10px auto;
+  display: block;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 6px;
+}
+
+textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+button {
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #0d47a1;
+}
+
+canvas {
+  display: block;
+  margin: 20px auto;
+  background-color: white;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  width: 90%;
+  max-width: 800px;
+  height: auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* ✅ استجابة الموبايل */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 22px;
+  }
+
+  textarea {
+    height: 100px;
+  }
+}

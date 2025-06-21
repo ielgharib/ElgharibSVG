@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>Elgharib OpenType Fonts</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Elgharib OpenType Fonts</h1>
+
+  <label for="fontFile">📂 ارفع خط TTF أو OTF:</label>
+  <input type="file" id="fontFile" accept=".ttf,.otf">
+
+  <br><br>
+
+  <label for="inputText">✍️ اكتب النص المراد معاينته:</label><br>
+  <textarea id="inputText" rows="4" cols="40">مثال: بسم الله الرحمن الرحيم</textarea>
+
+  <br><br>
+
+  <button id="previewBtn">📌 عرض المعاينة</button>
+
+  <br><br>
+
+  <canvas id="previewCanvas" width="800" height="200" style="border:1px solid #ccc;"></canvas>
+
+  <br><br>
+
+  <button id="downloadBtn">📥 تحميل الصورة</button>
+
+  <script src="opentype.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
