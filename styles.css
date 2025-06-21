@@ -117,3 +117,31 @@ footer {
   padding: 10px;
   border-radius: 6px;
 }
+.features-area {
+  margin-top: 40px;
+}
+
+.features-area h2 {
+  color: #00ffd1;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+#featuresList {
+  background: #111;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.feature-tag {
+  background: #00ffd1;
+  color: #000;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+}
