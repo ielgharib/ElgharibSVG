@@ -1,3 +1,4 @@
+// معاينة الخط
 document.getElementById("renderBtn").addEventListener("click", () => {
   const fileInput = document.getElementById("fontFile");
   const textInput = document.getElementById("textInput").value;
@@ -23,4 +24,16 @@ document.getElementById("renderBtn").addEventListener("click", () => {
   };
 
   reader.readAsArrayBuffer(fileInput.files[0]);
+});
+
+// تحميل المعاينة كصورة
+document.getElementById("downloadBtn").addEventListener("click", () => {
+  const preview = document.getElementById("preview");
+
+  html2canvas(preview).then((canvas) => {
+    const link = document.createElement("a");
+    link.download = "preview.png";
+    link.href = canvas.toDataURL();
+    link.click();
+  });
 });
