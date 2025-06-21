@@ -1,74 +1,90 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap');
-
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Cairo', sans-serif;
 }
 
 body {
-  font-family: 'Cairo', sans-serif;
-  direction: rtl;
-  background-color: #f9f9f9;
-  color: #222;
+  background: #1e1e1e;
+  color: #ffffff;
+  line-height: 1.6;
   padding: 20px;
-  margin: 0;
-  text-align: center;
 }
 
-h1 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  color: #1a237e;
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #00ffd1;
+}
+
+header p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+main {
+  max-width: 700px;
+  margin: auto;
+  background: #2a2a2a;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 255, 209, 0.2);
 }
 
 input[type="file"],
 textarea,
 button {
-  font-family: inherit;
-  font-size: 16px;
-  padding: 10px;
-  margin: 10px auto;
-  display: block;
-  width: 90%;
-  max-width: 500px;
-  border-radius: 6px;
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
 }
 
 textarea {
-  height: 120px;
   resize: vertical;
+  height: 120px;
+  font-size: 1.1rem;
+  background: #1a1a1a;
+  color: #fff;
 }
 
 button {
-  background-color: #1976d2;
-  color: white;
-  border: none;
+  background-color: #00ffd1;
+  color: #000;
+  font-weight: bold;
   cursor: pointer;
   transition: background 0.3s ease;
 }
 
 button:hover {
-  background-color: #0d47a1;
+  background-color: #00c5a0;
 }
 
-canvas {
-  display: block;
-  margin: 20px auto;
-  background-color: white;
-  border: 1px solid #aaa;
-  border-radius: 6px;
-  width: 90%;
-  max-width: 800px;
-  height: auto;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+.preview-area {
+  margin-top: 20px;
+  padding: 20px;
+  background: #000;
+  border-radius: 8px;
+  min-height: 100px;
+  text-align: center;
+  font-size: 24px;
 }
 
-/* ✅ استجابة الموبايل */
-@media (max-width: 600px) {
-  h1 {
-    font-size: 22px;
-  }
+.download-area {
+  margin-top: 20px;
+  text-align: center;
+}
 
-  textarea {
-    height: 100px;
-  }
+footer {
+  margin-top: 50px;
+  text-align: center;
+  color: #888;
+  font-size: 0.9rem;
 }
